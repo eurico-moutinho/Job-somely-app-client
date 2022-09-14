@@ -31,8 +31,8 @@ function AddEditCandidate(props) {
         console.log("The file to be uploaded is: ", e.target.files[0]);
 
         // const uploadData = new FormData();
-        function handleUserImage(event) {
-            event.preventDefault();
+        function handleUserImage() {
+            
             let image = event.target.imageUrl.files[0];
             let imageFormData = new FormData();
             imageFormData.append("imageUrl", image);
