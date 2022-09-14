@@ -1,8 +1,11 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap';
-import { AuthContext } from "../context/auth.context";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context"
+
+
 
 
 function AddEditCandidate(props) {
@@ -19,7 +22,6 @@ function AddEditCandidate(props) {
     const [linkedin, setLinkedin] = useState("");
 
     const [errorMsg, setErrorMsg] = useState("");
-    const { isLoading } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const storedToken = localStorage.getItem("authToken");
@@ -29,18 +31,18 @@ function AddEditCandidate(props) {
         // console.log("The file to be uploaded is: ", e.target.files[0]);
 
         const uploadData = new FormData();
-        
+
         // imageUrl => this name has to be the same as in the model since we pass
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
-       uploadData.append("image", e.target.files[0]);
-       console.log(uploadData)
+        uploadData.append("image", e.target.files[0]);
+
         axios
             .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
-                { headers: { Authorization: `Bearer ${storedToken}` }, "Allow-Control-Allow-Origin": "*" })
+                { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(response => {
-            //    console.log("response is: ", response);
+                console.log("response is: ", response);
                 // response carries "fileUrl" which we can use to update the state
-                setImage(response.fileUrl);
+                setImage(response.data.fileUrl);
             })
             .catch(err => console.log("Error while uploading the file: ", err));
     };
@@ -92,7 +94,7 @@ function AddEditCandidate(props) {
             location,
             about,
             skills,
-            image: image,
+            image,
             linkedin
         }
         console.log(requestBody)
@@ -138,8 +140,6 @@ function AddEditCandidate(props) {
             })
             .catch((err) => console.log(err));
     };
-
-    if (isLoading) return <p><img src={'https://c.tenor.com/y6RVjd7Dz8sAAAAC/loading-waiting.gif'}/></p>;
 
     return (
         <div className="text-center">
