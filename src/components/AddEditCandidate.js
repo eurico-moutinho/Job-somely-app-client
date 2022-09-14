@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap';
-import { useContext } from "react";
-import { AuthContext } from "../context/auth.context"
-
-
 
 
 function AddEditCandidate(props) {
@@ -37,7 +33,8 @@ function AddEditCandidate(props) {
         uploadData.append("image", e.target.files[0]);
 
         axios
-            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData)
+            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
+                { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(response => {
                 // console.log("response is: ", response);
                 // response carries "fileUrl" which we can use to update the state

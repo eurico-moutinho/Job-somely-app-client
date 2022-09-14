@@ -8,6 +8,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.1",
     "cloudinary": "^1.31.0",
+    "cloudinary-react": "^1.8.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express-jwt": "^7.7.5",
