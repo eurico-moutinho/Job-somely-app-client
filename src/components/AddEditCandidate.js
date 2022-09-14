@@ -188,7 +188,7 @@ function AddEditCandidate(props) {
                                                 name="image"
 
                                                 onChange={(e) => handleFileUpload(e)} className="form-control-file form-control"
-                                                accept="image/png, image/jpeg, image/jpg" required />
+                                                accept="image/png, image/jpeg, image/jpg" />
                                         </div>
                                     </div>
                                 </div>
