@@ -55,6 +55,11 @@ function AddEditCandidate(props) {
     // const {  user } = useContext(AuthContext);
     // console.log(user)
 
+  const onFileChange = (event) => {
+    // Updating the state
+    setImage({ image: event.target.files[0] });
+  };
+
     useEffect(() => {
         getCandidate();
         // eslint-disable-next-line
@@ -62,6 +67,28 @@ function AddEditCandidate(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Client ID
+    const clientId = "65ba6edd290a3e8",
+    auth = "Client-ID " + clientId;
+
+  // Creating an object of formData
+  const formData = new FormData();
+
+  // Adding our image to formData
+  formData.append("image", image);
+
+  // Making the post request
+  await axios.post("https://api.imgur.com/3/image/", 
+  {formData, 
+    headers: {
+      // Setting header
+      Authorization: auth,
+      Accept: "application/json",
+    },
+  })
+    .then((res) => alert("image uploaded") && console.log(res)) 
+    .catch((err) => alert("Failed") && console.log(err));
 
         setErrorMsg("");
 
@@ -167,8 +194,8 @@ function AddEditCandidate(props) {
                                             <input type="url"
                                                 name="image"
                                                 value={image}
-                                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)"
-                                                onChange={(e) => setImage(e.target.value)} className="form-control-file form-control" required />
+                                                // pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)"
+                                                onChange={onFileChange} className="form-control-file form-control" required />
                                         </div>
                                     </div>
                                 </div>
