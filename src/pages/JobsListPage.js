@@ -13,7 +13,7 @@ function JobsListPage() {
   const navigate = useNavigate();
 
   const storedToken = localStorage.getItem("authToken");
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, isLoading } = useContext(AuthContext);
   const title = searchParams.get("q");
 
   const getAllJobs = () => {
@@ -42,6 +42,8 @@ function JobsListPage() {
     navigate(`/jobs/?q=${query}`);
     setSearchParams(title)
     };
+
+    if (isLoading) return <p><img src={'https://c.tenor.com/y6RVjd7Dz8sAAAAC/loading-waiting.gif'}/></p>;
 
   return (
 
