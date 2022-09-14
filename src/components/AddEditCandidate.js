@@ -108,7 +108,7 @@ function AddEditCandidate(props) {
                 .then((response) => {
                     const newCandidateId = response.data._id;
                     console.log(response.data)
-                    navigate(`/api/candidates/${newCandidateId}`);
+                    navigate(`/`);
                 })
                 .catch((error) => console.log(error));
         } else {
