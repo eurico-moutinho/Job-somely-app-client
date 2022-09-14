@@ -33,7 +33,7 @@ function AddEditCandidate(props) {
         // const uploadData = new FormData();
         function handleUserImage() {
             
-            let image = event.target.imageUrl.files[0];
+            let image = e.target.files[0];
             let imageFormData = new FormData();
             imageFormData.append("imageUrl", image);
            }
