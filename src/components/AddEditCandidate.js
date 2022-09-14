@@ -37,10 +37,9 @@ function AddEditCandidate(props) {
         uploadData.append("image", e.target.files[0]);
 
         axios
-            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
-                { headers: { Authorization: `Bearer ${storedToken}` } })
+            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData)
             .then(response => {
-                console.log("response is: ", response);
+                // console.log("response is: ", response);
                 // response carries "fileUrl" which we can use to update the state
                 setImage(response.data.fileUrl);
             })
