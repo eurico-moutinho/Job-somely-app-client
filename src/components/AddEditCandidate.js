@@ -81,11 +81,7 @@ function AddEditCandidate(props) {
   // Making the post request
   await axios.post("https://api.imgur.com/3/image/", 
   {formData, 
-    headers: {
-      // Setting header
-      Authorization: auth,
-      Accept: "application/json",
-    },
+    headers: { Authorization: `Bearer ${storedToken}`},
   })
     .then((res) => alert("image uploaded") && console.log(res)) 
     .catch((err) => alert("Failed") && console.log(err));
