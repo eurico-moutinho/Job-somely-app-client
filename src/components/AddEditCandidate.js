@@ -164,9 +164,10 @@ function AddEditCandidate(props) {
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
                                             <label className="form-label">Profile Picture</label>
-                                            <input type="text"
+                                            <input type="url"
                                                 name="image"
                                                 value={image}
+                                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)"
                                                 onChange={(e) => setImage(e.target.value)} className="form-control-file form-control" required />
                                         </div>
                                     </div>
