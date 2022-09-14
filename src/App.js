@@ -34,7 +34,7 @@ function App() {
         <Route path="/jobs/:jobId" element={<IsPrivate><JobDetailsPage /></IsPrivate>} />
         <Route path="/companies" element={<IsPrivate><CompaniesListPage /></IsPrivate>} />
         <Route path="/companies/:companyId" element={<IsPrivate><CompanyDetailsPage /></IsPrivate>} />
-        <Route path="/candidates" element={<IsCompany><CandidatesListPage /></IsCompany>} />
+        <Route path="/candidates" element={<IsPrivate><CandidatesListPage /></IsPrivate>} />
         <Route path="/candidates/:candidateId" element={<IsPrivate><CandidateDetailsPage /></IsPrivate>} />
         <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
         <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
