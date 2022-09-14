@@ -36,6 +36,7 @@ function AddEditCandidate(props) {
             let image = e.target.files[0];
             let imageFormData = new FormData();
             imageFormData.append("image", image);
+            console.log(imageFormData)
            }
     
         // imageUrl => this name has to be the same as in the model since we pass
