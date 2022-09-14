@@ -24,7 +24,7 @@ function SignupPage(props) {
 
     const requestBody = { email, password, username, userType };
 
-    axios.post(`${process.env.REACT_APP_API_URL}/api/signup`, requestBody)
+    axios.post(`https://awful-red-kimono.cyclic.app/api/signup`, requestBody)
       .then((response) => {
         console.log('JWT token', response.data.authToken);
 

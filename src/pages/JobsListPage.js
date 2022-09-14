@@ -18,7 +18,7 @@ function JobsListPage() {
 
   const getAllJobs = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/jobs`,
+      .get(`https://awful-red-kimono.cyclic.app/api/jobs`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => setJobs(response.data))
@@ -29,7 +29,7 @@ function JobsListPage() {
     navigate(`/jobs/?q=${query}`);
     if(title!==''){
       axios
-        .get(`${process.env.REACT_APP_API_URL}/api/jobs`,
+        .get(`https://awful-red-kimono.cyclic.app/api/jobs`,
           { headers: { Authorization: `Bearer ${storedToken}` } }
         )
         .then( (response) => { 

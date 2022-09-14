@@ -14,7 +14,7 @@ function CompanyDetailsPage(props) {
 
     const getCompany = () => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/api/companies/${companyId}`,
+            .get(`https://awful-red-kimono.cyclic.app/api/companies/${companyId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {

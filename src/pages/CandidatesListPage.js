@@ -15,7 +15,7 @@ function CandidatesListPage() {
 
   const getAllCandidates = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/candidates`,
+      .get(`https://awful-red-kimono.cyclic.app/api/candidates`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) =>{

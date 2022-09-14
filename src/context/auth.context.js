@@ -22,7 +22,7 @@ function AuthProviderWrapper(props) {
     if (storedToken) {
 
       axios.get(
-        `${process.env.REACT_APP_API_URL}/api/verify`,
+        `https://awful-red-kimono.cyclic.app/api/verify`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
         .then((response) => {

@@ -37,7 +37,7 @@ function AddEditCandidate(props) {
         uploadData.append("image", e.target.files[0]);
 
         axios
-            .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData,
+            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(response => {
                 // console.log("response is: ", response);
@@ -50,7 +50,7 @@ function AddEditCandidate(props) {
 
     const getCandidate = () => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/api/myprofile`,
+            .get(`https://awful-red-kimono.cyclic.app/api/myprofile`,
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then((response) => {
                 const oneCandidate = response.data;
@@ -101,7 +101,7 @@ function AddEditCandidate(props) {
        if (candidateId == '') {
            await axios
                 .post(
-                    `${process.env.REACT_APP_API_URL}/api/candidates`,
+                    `https://awful-red-kimono.cyclic.app/api/candidates`,
                     requestBody,
                     { headers: { Authorization: `Bearer ${storedToken}` } }
                 )
@@ -114,7 +114,7 @@ function AddEditCandidate(props) {
         } else {
            await axios
                 .put(
-                    `${process.env.REACT_APP_API_URL}/api/candidates/${candidateId}`,
+                    `https://awful-red-kimono.cyclic.app/api/candidates/${candidateId}`,
                     requestBody,
                     { headers: { Authorization: `Bearer ${storedToken}` } }
                 )
@@ -131,7 +131,7 @@ function AddEditCandidate(props) {
         // Make a DELETE request to delete the candidate
         axios
             .delete(
-                `${process.env.REACT_APP_API_URL}/api/candidates/${candidateId}`,
+                `https://awful-red-kimono.cyclic.app/api/candidates/${candidateId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then(() => {
