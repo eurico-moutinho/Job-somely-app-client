@@ -26,10 +26,10 @@ function AddEditCandidate(props) {
 
 
     const handleFileUpload = (e) => {
-        console.log("The file to be uploaded is: ", e.target.files[0]);
+        // console.log("The file to be uploaded is: ", e.target.files[0]);
 
         const uploadData = new FormData();
-
+        console.log(uploadData)
         // imageUrl => this name has to be the same as in the model since we pass
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
        uploadData.append("image", e.target.files[0]);
