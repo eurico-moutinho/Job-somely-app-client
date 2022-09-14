@@ -13,7 +13,8 @@ const errorHandler = (err) => {
 };
  
 const getProfile = () => {
-  return api.get("/candidates")
+  return api.get("/candidates",
+  { headers: { Authorization: `Bearer ${storedToken}` } })
     .then((res) => res.data)
     .catch(errorHandler);
 };
@@ -26,7 +27,8 @@ const uploadImage = (file) => {
 };
  
 const createProfile = (myprofile) => {
-  return api.post("/candidates", myprofile)
+  return api.post("/candidates", myprofile,
+  { headers: { Authorization: `Bearer ${storedToken}` } })
     .then(res => res.data)
     .catch(errorHandler);
 };
