@@ -23,7 +23,7 @@ function AddEditCandidate(props) {
     const storedToken = localStorage.getItem("authToken");
 
 
-    const handleFileUpload = (e) => {
+    const handleFileUpload = async (e) => {
         // console.log("The file to be uploaded is: ", e.target.files[0]);
 
         const uploadData = new FormData();
@@ -32,7 +32,7 @@ function AddEditCandidate(props) {
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
         uploadData.append("image", e.target.files[0]);
 
-        axios
+      await  axios
             .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(response => {
