@@ -34,8 +34,7 @@ function AddEditCandidate(props) {
         uploadData.append("image", e.target.files[0]);
 
         service
-      .uploadImage(uploadData,
-                { headers: { Authorization: `Bearer ${storedToken}` } })
+      .uploadImage(uploadData)
             .then(response => {
                 // console.log("response is: ", response);
                 // response carries "fileUrl" which we can use to update the state

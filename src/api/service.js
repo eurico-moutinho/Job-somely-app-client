@@ -1,4 +1,6 @@
 import axios from "axios";
+
+const storedToken = localStorage.getItem("authToken");
  
 const api = axios.create({
   // make sure you use PORT = 5005 (the port where our server is running)
@@ -17,7 +19,8 @@ const getProfile = () => {
 };
  
 const uploadImage = (file) => {
-  return api.post("/upload", file)
+  return api.post("/upload", file,
+  { headers: { Authorization: `Bearer ${storedToken}` } })
     .then(res => res.data)
     .catch(errorHandler);
 };
