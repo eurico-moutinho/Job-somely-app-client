@@ -30,14 +30,20 @@ function AddEditCandidate(props) {
     const handleFileUpload = (e) => {
         console.log("The file to be uploaded is: ", e.target.files[0]);
 
-        const uploadData = new FormData();
-
+        // const uploadData = new FormData();
+        function handleUserImage(event) {
+            event.preventDefault();
+            let image = event.target.imageUrl.files[0];
+            let imageFormData = new FormData();
+            imageFormData.append("imageUrl", image);
+           }
+    
         // imageUrl => this name has to be the same as in the model since we pass
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
-        uploadData.append("image", e.target.files[0]);
-        console.log(uploadData)
+        // uploadData.append("image", e.target.files[0]);
+        // console.log(uploadData)
         axios
-            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
+            .post(`https://awful-red-kimono.cyclic.app/api/upload`, handleUserImage(),
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(response => {
                 console.log("response is: ", response);
