@@ -25,6 +25,7 @@ function AddEditCandidate(props) {
     const navigate = useNavigate();
 
     const storedToken = localStorage.getItem("authToken");
+    const { isLoading } = useContext(AuthContext);
 
 
     const handleFileUpload = (e) => {
@@ -43,7 +44,7 @@ function AddEditCandidate(props) {
                 // console.log("response is: ", response);
                 // response carries "fileUrl" which we can use to update the state
                 setTimeout(()=>
-                {setImage(response.data.fileUrl)},3000);
+                {setImage(response.data.fileUrl)},30000);
             })
             .catch(err => console.log("Error while uploading the file: ", err));
     };
@@ -141,7 +142,7 @@ function AddEditCandidate(props) {
             })
             .catch((err) => console.log(err));
     };
-
+    if (isLoading) return <p><img src={'https://c.tenor.com/y6RVjd7Dz8sAAAAC/loading-waiting.gif'}/></p>;
     return (
         <div className="text-center">
 
