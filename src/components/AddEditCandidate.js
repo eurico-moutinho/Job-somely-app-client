@@ -213,7 +213,7 @@ function AddEditCandidate(props) {
                                     </div>
                                     <div className="col-md-4 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">Current Location</label>
+                                            <label className="form-label" required>Current Location</label>
                                             <input type="text"
                                                 name="location"
                                                 value={location}
