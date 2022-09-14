@@ -62,10 +62,17 @@ function AddEditCandidate(props) {
                 setLocation(oneCandidate.location);
                 setAbout(oneCandidate.about);
                 setSkills(oneCandidate.skills);
-                setImage(oneCandidate.image);
+
                 setLinkedin(oneCandidate.linkedin)
             })
             .catch((error) => console.log(error));
+
+        service.getProfile()
+                    .then((data) => {
+                        // console.log("data", data);
+                        setImage(data);
+                    })
+                    .catch((err) => console.log(err));
     };
 
 
