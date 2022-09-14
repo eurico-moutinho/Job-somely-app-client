@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap';
-import { useContext } from "react";
-import { AuthContext } from "../context/auth.context"
-
-
+import service from "../api/service";
 
 
 function AddEditCandidate(props) {
@@ -36,8 +33,8 @@ function AddEditCandidate(props) {
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
         uploadData.append("image", e.target.files[0]);
 
-        axios
-            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
+        service
+      .uploadImage(uploadData,
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(response => {
                 // console.log("response is: ", response);
