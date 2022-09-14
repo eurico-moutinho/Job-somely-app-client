@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap';
+import { AuthContext } from "../context/auth.context";
 
 
 function AddEditCandidate(props) {
@@ -18,6 +19,7 @@ function AddEditCandidate(props) {
     const [linkedin, setLinkedin] = useState("");
 
     const [errorMsg, setErrorMsg] = useState("");
+    const { isLoading } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const storedToken = localStorage.getItem("authToken");
@@ -136,6 +138,8 @@ function AddEditCandidate(props) {
             })
             .catch((err) => console.log(err));
     };
+
+    if (isLoading) return <p><img src={'https://c.tenor.com/y6RVjd7Dz8sAAAAC/loading-waiting.gif'}/></p>;
 
     return (
         <div className="text-center">
