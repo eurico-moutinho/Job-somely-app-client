@@ -20,10 +20,11 @@ const getProfile = () => {
 };
  
 const uploadImage = (file) => {
-  return api.post("/upload", file,
+  return( 
+    api.post("/upload", file,
   { headers: { Authorization: `Bearer ${storedToken}` } })
     .then(res => res.data)
-    .catch(errorHandler);
+    .catch(errorHandler))
 };
  
 const createProfile = (myprofile) => {
