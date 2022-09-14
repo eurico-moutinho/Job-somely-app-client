@@ -89,7 +89,7 @@ function LoginPage(props) {
                                                     <Button className=" btn-lg w-100" type="submit" style={{ borderRadius: "40px", color: 'rgb(255, 225, 148)', border: "solid", backgroundColor: 'rgb(41, 52, 98)' }} >Login</Button>
                                                 </div>
                                                 <p className="mb-5 pb-lg-2" style={{ color: 'rgb(46, 45, 64)' }} >Don't have an account?
-                                                    <NavLink to={"/login"}> Register here</NavLink></p>
+                                                    <NavLink to={"/signup"}> Register here</NavLink></p>
                                                 <div>
                                                     <NavLink to="#!" className="small text-muted" style={{ color: 'rgb(46, 45, 64)' }}>Terms of use.</NavLink>
                                                     <NavLink to="#!" className="small text-muted" style={{ color: 'rgb(46, 45, 64)' }}>Privacy policy</NavLink>

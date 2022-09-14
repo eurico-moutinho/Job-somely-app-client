@@ -28,28 +28,6 @@ function AddEditCandidate(props) {
     const { isLoading } = useContext(AuthContext);
 
 
-    const handleFileUpload = (e) => {
-        // console.log("The file to be uploaded is: ", e.target.files[0]);
-
-        const uploadData = new FormData();
-
-        // imageUrl => this name has to be the same as in the model since we pass
-        // req.body to .create() method when creating a new movie in '/api/movies' POST route
-        setTimeout(()=>{
-        uploadData.append("image", e.target.files[0])}, 30000);
-        
-        axios
-            .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
-                { headers: { Authorization: `Bearer ${storedToken}` } })
-            .then(response => {
-                // console.log("response is: ", response);
-                // response carries "fileUrl" which we can use to update the state
-                setImage(response.data.fileUrl);
-            })
-            .catch(err => console.log("Error while uploading the file: ", err));
-    };
-
-
     const getCandidate = () => {
         axios
             .get(`https://awful-red-kimono.cyclic.app/api/myprofile`,
@@ -186,11 +164,10 @@ function AddEditCandidate(props) {
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
                                             <label className="form-label">Profile Picture</label>
-                                            <input type="file"
+                                            <input type="text"
                                                 name="image"
-
-                                                onChange={(e) => handleFileUpload(e)} className="form-control-file form-control"
-                                                accept="image/png, image/jpeg, image/jpg" required />
+                                                value={image}
+                                                onChange={(e) => setImage(e.target.value)} className="form-control-file form-control" required />
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +192,7 @@ function AddEditCandidate(props) {
                                     </div>
                                     <div className="col-md-4 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">Current Location</label>
+                                            <label className="form-label" required>Current Location</label>
                                             <input type="text"
                                                 name="location"
                                                 value={location}
