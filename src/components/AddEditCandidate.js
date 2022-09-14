@@ -28,24 +28,22 @@ function AddEditCandidate(props) {
 
 
     const handleFileUpload = (e) => {
-        console.log("The file to be uploaded is: ", e.target.files[0]);
-        const imageFile=e.target.files[0];
-        console.log(imageFile)
+        // console.log("The file to be uploaded is: ", e.target.files[0]);
+
         const uploadData = new FormData();
-        
+
         // imageUrl => this name has to be the same as in the model since we pass
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
-        uploadData.append("image", imageFile);
-        for (const value of uploadData.values()) {
-            console.log(value);
-          }
+        uploadData.append("image", e.target.files[0]);
+
         axios
             .post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData,
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(response => {
-                console.log("response is: ", response);
+                // console.log("response is: ", response);
                 // response carries "fileUrl" which we can use to update the state
-                setImage(response.fileUrl);
+                setTimeout(()=>
+                {setImage(response.data.fileUrl)},3000);
             })
             .catch(err => console.log("Error while uploading the file: ", err));
     };
@@ -111,7 +109,7 @@ function AddEditCandidate(props) {
                 .then((response) => {
                     const newCandidateId = response.data._id;
                     console.log(response.data)
-                    navigate(`/`);
+                    navigate(`/api/candidates/${newCandidateId}`);
                 })
                 .catch((error) => console.log(error));
         } else {
@@ -191,7 +189,7 @@ function AddEditCandidate(props) {
                                                 name="image"
 
                                                 onChange={(e) => handleFileUpload(e)} className="form-control-file form-control"
-                                                accept="image/png, image/jpeg, image/jpg" />
+                                                accept="image/png, image/jpeg, image/jpg" required />
                                         </div>
                                     </div>
                                 </div>
@@ -216,7 +214,7 @@ function AddEditCandidate(props) {
                                     </div>
                                     <div className="col-md-4 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label" required>Current Location</label>
+                                            <label className="form-label">Current Location</label>
                                             <input type="text"
                                                 name="location"
                                                 value={location}
