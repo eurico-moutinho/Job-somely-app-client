@@ -18,7 +18,7 @@ function AddEditCompany(props) {
 
   const getCompany = () => {
     axios
-      .get(`https://awful-red-kimono.cyclic.app/api/mycompany`,
+      .get(`https://jobsomely.herokuapp.com/api/mycompany`,
         { headers: { Authorization: `Bearer ${storedToken}` } })
       .then((response) => {
         const oneCompany = response.data;
@@ -54,7 +54,7 @@ function AddEditCompany(props) {
     if (companyId === "") {
       axios
         .post(
-          `https://awful-red-kimono.cyclic.app/api/companies`,
+          `https://jobsomely.herokuapp.com/api/companies`,
           requestBody,
           { headers: { Authorization: `Bearer ${storedToken}` } }
         )
@@ -66,7 +66,7 @@ function AddEditCompany(props) {
     } else {
       axios
         .put(
-          `https://awful-red-kimono.cyclic.app/api/companies/${companyId}`,
+          `https://jobsomely.herokuapp.com/api/companies/${companyId}`,
           requestBody,
           { headers: { Authorization: `Bearer ${storedToken}` } }
         )
@@ -84,7 +84,7 @@ function AddEditCompany(props) {
     // Make a DELETE request to delete the company
     axios
       .delete(
-        `https://awful-red-kimono.cyclic.app/api/companies/${companyId}`,
+        `https://jobsomely.herokuapp.com/api/companies/${companyId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then(() => {

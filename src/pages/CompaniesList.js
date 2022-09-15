@@ -14,7 +14,7 @@ function CompaniesListPage() {
 
   const getAllCompanies = () => {
     axios
-      .get(`https://awful-red-kimono.cyclic.app/api/companies`,
+      .get(`https://jobsomely.herokuapp.com/api/companies`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => setCompanies(response.data))

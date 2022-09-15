@@ -22,7 +22,7 @@ function LoginPage(props) {
 
         const requestBody = { username, password };
 
-        axios.post(`https://awful-red-kimono.cyclic.app/api/login`, requestBody)
+        axios.post(`https://jobsomely.herokuapp.com/api/login`, requestBody)
             .then((response) => {
 
                 console.log('JWT token', response.data.authToken);

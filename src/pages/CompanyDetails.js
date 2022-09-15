@@ -14,7 +14,7 @@ function CompanyDetailsPage(props) {
 
     const getCompany = () => {
         axios
-            .get(`https://awful-red-kimono.cyclic.app/api/companies/${companyId}`,
+            .get(`https://jobsomely.herokuapp.com/api/companies/${companyId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {

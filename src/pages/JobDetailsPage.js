@@ -21,7 +21,7 @@ function JobDetailsPage(props) {
 
     const getJob = () => {
         axios
-            .get(`https://awful-red-kimono.cyclic.app/api/jobs/${jobId}`,
+            .get(`https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
@@ -35,7 +35,7 @@ function JobDetailsPage(props) {
     const applyJob = () => {
         setMessage("");
         axios
-            .post(`https://awful-red-kimono.cyclic.app/api/apply/${jobId}`, {},
+            .post(`https://jobsomely.herokuapp.com/api/apply/${jobId}`, {},
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {

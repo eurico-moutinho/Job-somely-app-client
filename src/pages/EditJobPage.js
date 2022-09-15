@@ -22,7 +22,7 @@ function EditJobPage(props) {
 
     useEffect(() => {
         axios
-            .get(`https://awful-red-kimono.cyclic.app/api/jobs/${jobId}`,
+            .get(`https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
@@ -53,7 +53,7 @@ function EditJobPage(props) {
         // Make a PUT request to update the job
         axios
             .put(
-                `https://awful-red-kimono.cyclic.app/api/jobs/${jobId}`,
+                `https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
                 requestBody,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
@@ -68,7 +68,7 @@ function EditJobPage(props) {
         // Make a DELETE request to delete the job
         axios
             .delete(
-                `https://awful-red-kimono.cyclic.app/api/jobs/${jobId}`,
+                `https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then(() => {
