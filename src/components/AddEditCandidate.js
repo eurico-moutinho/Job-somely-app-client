@@ -59,7 +59,7 @@ function AddEditCandidate(props) {
                 setLocation(oneCandidate.location);
                 setAbout(oneCandidate.about);
                 setSkills(oneCandidate.skills);
-                setImageUrl(oneCandidate.image);
+                setImageUrl(oneCandidate.imageUrl);
                 setLinkedin(oneCandidate.linkedin)
             })
             .catch((error) => console.log(error));
