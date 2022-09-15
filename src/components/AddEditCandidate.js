@@ -27,6 +27,25 @@ function AddEditCandidate(props) {
     const storedToken = localStorage.getItem("authToken");
     const { isLoading } = useContext(AuthContext);
 
+    const handleFileUpload = (e) => {
+        // console.log("The file to be uploaded is: ", e.target.files[0]);
+
+        const uploadData = new FormData();
+
+        // imageUrl => this name has to be the same as in the model since we pass
+        // req.body to .create() method when creating a new movie in '/api/movies' POST route
+        uploadData.append("image", e.target.files[0]);
+
+        axios
+            .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData,
+                { headers: { Authorization: `Bearer ${storedToken}` } })
+            .then(response => {
+                // console.log("response is: ", response);
+                // response carries "fileUrl" which we can use to update the state
+                setImage(response.data.fileUrl);
+            })
+            .catch(err => console.log("Error while uploading the file: ", err));
+    };
 
     const getCandidate = () => {
         axios
@@ -164,11 +183,13 @@ function AddEditCandidate(props) {
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
                                             <label className="form-label">Profile Picture</label>
-                                            <input type="url"
+                                            <input type="file"
                                                 name="image"
-                                                value={image}
-                                                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)"
-                                                onChange={(e) => setImage(e.target.value)} className="form-control-file form-control" required />
+                                                onChange={(e) => handleFileUpload(e)}
+                                                // value={image}
+                                                // pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)"
+                                                // onChange={(e) => setImage(e.target.value)} 
+                                                className="form-control-file form-control" required />
                                         </div>
                                     </div>
                                 </div>

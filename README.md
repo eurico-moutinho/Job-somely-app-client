@@ -1,43 +1,59 @@
-# Getting Started with Create React App
+# Jobsomely
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [bootstrap@5.2.0](https://getbootstrap.com/docs/5.2/getting-started/introduction/).
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This app is an employment website for job listings.
 
-### `yarn start`
+### User Stories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-  **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
+-  **Signup:** As an anon I can sign up in the platform so that I can start creating and managing my account
+-  **Login:** As a user I can login to the platform so that I can start creating and managing my backlog
+-  **Logout:** As a user I can logout from the platform so no one else can modify my information
+-  **Apply to jobs** As a candidate I can apply to advertised jobs
+-  **Add jobs** As a company I can add jobs to jobs listings
+-  **Delete jobs** As a company I can delete jobs from jobs listings
+-  **Check profile** As a user I can check companies and candidates profiles
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Backlog
 
-### `yarn test`
+- Upload image file
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Client
 
-### `yarn build`
+### Routes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- / - Homepage
+- /signup - Signup form
+- /login - Login form
+- /jobs - jobs list
+- /jobs/:jobId - job details
+- /companies - companies list
+- /companies/:companyId - company details
+- /candidates - candidates list
+- /candidates/:candidateId - candidate details
+- /myprofile - my details
+- /mycompany - my company details
+- /jobs/create - create job
+- /job/edit/:jobId - job edit/
+- 404
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Home Page (public)
+- Sign in Page (anon only)
+- Log in Page (anon only)
+- Jobs List Page (private only)
+- Candidates List Page (private only)
+- Companies List Page (private only)
+- Job Create (company only)
+- Job Detail Page (private only)
+- Candidate Detail Page (private only)
+- Company Detail Page (private only)
+- My Profile Page (private only)
+- 404 Page (public)
 
 ## Learn More
 
