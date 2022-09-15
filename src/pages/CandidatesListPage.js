@@ -18,9 +18,10 @@ function CandidatesListPage() {
       .get(`https://jobsomely.herokuapp.com/api/candidates`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
-      .then((response) =>{
+      .then((response) => {
         console.log(response.data)
-         setCandidates(response.data)})
+        setCandidates(response.data)
+      })
       .catch((error) => console.log(error));
   };
 
@@ -31,42 +32,44 @@ function CandidatesListPage() {
 
 
   return (
-    <div className="CandidatesListPage">
+    <div className="CandidatesListPage" style={{ backgroundColor: 'rgb(234, 243, 248) ' }} >
       <header className="row">
 
         <div className="col">
 
-          <Image src="/job-somely-header3.png" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-80" alt="candidates header" />
+          <Image src="/job-somely-header31.jpg" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-80" alt="candidates header" />
 
         </div>
       </header>
       <div className="container">
 
         <div className="my-5">
-          <h2 className="mb-4 fw-bold">Candidates</h2>
-          <p>Great work places should work with great candidates. Here you will find the largest high quality candidate pool in the world. All candidates are hand picked and vetted.</p>
+          <h2 className="mb-4 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Candidates</h2>
+          <p style={{ color: 'rgb(71, 19, 33)' }}>Great work places should work with great candidates. Here you will find the largest high quality candidate pool in the world. All candidates are hand picked and vetted.</p>
         </div> <hr />
       </div>
       <div className="container mt-5">
-        <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25 shadow-lg">
+        <div className="album my-5 pb-2 px-4 shadow-lg" style={{ backgroundColor: 'rgb(255, 225, 148)' }}>
 
           <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-4 g-4 mb-5">
 
             {candidates.map((candidate) => {
               return (
                 <div className="Candidates col" key={candidate._id} >
-                  <Card className="pagecard shadow-lg" >
-                    <Card.Img variant="top" className="rounded-circle rounded m-auto my-2" style={{ width: '120px' }} src={candidate.imageUrl} />
-                    <Card.Header className="fw-bold" as="h5">{candidate.firstName} {candidate.lastName}</Card.Header>
+
+                  <Card className="pagecard shadow-lg" style={{ backgroundColor: 'rgb(234, 243, 248)' }} >
+                    <Card.Img variant="top" className="rounded-circle rounded m-auto my-2" style={{ width: '120px' }} src={candidate.image} />
+                    <Card.Header className="fw-bold" as="h5" style={{ color: 'rgb(34, 28, 148)' }}>{candidate.firstName} {candidate.lastName}</Card.Header>
+
                     <Card.Body>
-                      <Card.Title>Primary Role:</Card.Title>
-                      <Card.Text>
+                      <Card.Title style={{ color: 'rgb(34, 28, 148)' }}>Primary Role:</Card.Title>
+                      <Card.Text style={{ color: 'rgb(71, 19, 33)' }}>
                         {candidate.role}
-                      </Card.Text>
+                      </Card.Text >
                       {isLoggedIn && (
-                        <Button className="bg-gradient" variant="primary"><NavLink to={`/candidates/${candidate._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}><NavLink to={`/candidates/${candidate._id}`}><p className="m-0" style={{ color: 'rgb(41, 52, 98)' }}>More Details</p></NavLink></Button>)}
                       {!isLoggedIn && (
-                        <Button className="bg-gradient" variant="primary"><NavLink to={`/login`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}><NavLink to={`/login`}><p className="m-0" style={{ color: 'rgb(41, 52, 98)' }}>More Details</p></NavLink></Button>)}
                     </Card.Body>
                   </Card>
                 </div>

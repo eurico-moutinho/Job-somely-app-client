@@ -57,15 +57,15 @@ function SignupPage(props) {
                       <div className="feature-icon d-flex align-items-center mb-3 pb-1">
 
                         {/* <Image className="mx-auto" src="/job-somely-logo1.png" width={"100"} /> */}
-                        {/* <h2 className="text-center" style={{ color: 'rgb(46, 45, 64)' }}>Jobsomely</h2> */}
+                        {/* <h2 className="text-center" style={{ color: 'rgb(34, 28, 148)' }}>Jobsomely</h2> */}
                       </div>
 
 
-                      <h5 className="fw-normal mb-3 pb-3  fw-bold" style={{ color: 'rgb(46, 45, 64)' }}>Create your account</h5>
+                      <h5 className="fw-normal mb-3 pb-3  fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Create your account</h5>
                       {errorMessage && <p className="error-message text-danger fw-bold ">{errorMessage}</p>}
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" style={{ color: 'rgb(46, 45, 64)' }}>Username</label>
+                        <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Username</label>
                         <input type="text"
                           value={username}
                           onChange={(e) => setUsername(e.target.value)} className="form-control form-control-lg"
@@ -76,7 +76,7 @@ function SignupPage(props) {
                       </div>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" style={{ color: 'rgb(46, 45, 64)' }}>Email address</label>
+                        <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Email address</label>
                         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control form-control-lg"
                           placeholder="jobsomely@jobsomely.com" required />
 
@@ -84,7 +84,7 @@ function SignupPage(props) {
                       </div>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" style={{ color: 'rgb(46, 45, 64)' }}>Password</label>
+                        <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Password</label>
                         <input type="password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)} className="form-control form-control-lg"
@@ -93,7 +93,7 @@ function SignupPage(props) {
 
                       </div>
                       <div className="form-outline my-4">
-                        <label className="form-label" style={{ color: 'rgb(46, 45, 64)' }}>Please Select User Type</label>
+                        <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Please Select User Type</label>
                         <select className="form-control form-control-lg form-select" value={userType} onChange={(e) => setUserType(e.target.value)}>
                           <option value="candidate" >Candidate</option>
                           <option value="company">Company</option>
@@ -104,11 +104,11 @@ function SignupPage(props) {
                       <div className="pt-1 mb-4">
                         <Button className=" btn-lg w-100" type="submit" style={{ borderRadius: "40px", color: 'rgb(255, 225, 148)', border: "solid", backgroundColor: 'rgb(41, 52, 98)' }} >Register</Button>
                       </div>
-                      <p className="mb-4 pb-lg-2" style={{ color: 'rgb(46, 45, 64)' }}>Already have an account? Click
+                      <p className="mb-4 pb-lg-2" style={{ color: 'rgb(34, 28, 148)' }}>Already have an account? Click
                         <NavLink to={"/login"}> Login</NavLink> to login.</p>
                       <div>
-                        <NavLink to="#!" className="small text-muted" style={{ color: 'rgb(46, 45, 64)' }}>Terms of use.</NavLink>
-                        <NavLink to="#!" className="small text-muted" style={{ color: 'rgb(46, 45, 64)' }}>Privacy policy</NavLink>
+                        <NavLink to="#!" className="small text-muted" style={{ color: 'rgb(34, 28, 148)' }}>Terms of use.</NavLink>
+                        <NavLink to="#!" className="small text-muted" style={{ color: 'rgb(34, 28, 148)' }}>Privacy policy</NavLink>
                       </div>
                     </Form>
                   </div>

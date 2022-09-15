@@ -16,8 +16,8 @@ function HomePage() {
       <div className='container'>
         <div className="row">
           <div className="feature col-md-9 text-center fw-bold  p-3">
-            <h2 className=" opacity-75" style={{ color: 'rgb(214, 28, 78)' }}><span style={{ color: 'rgb(46, 45, 64)' }}><strong>A new job</strong></span> is closer than you think.</h2>
-            <h3 className=" opacity-75" style={{ color: 'rgb(214, 28, 78)' }}> Win the race to <span style={{ color: 'rgb(46, 45, 64)' }}><strong>get the best candidates</strong></span> and <span style={{ color: 'rgb(46, 45, 64)' }}><strong>hire applicants</strong></span>   faster.</h3>
+            <h2 className=" opacity-75" style={{ color: 'rgb(71, 19, 33)' }}><span style={{ color: 'rgb(34, 28, 148)' }}><strong>A new job</strong></span> is closer than you think.</h2>
+            <h3 className=" opacity-75" style={{ color: 'rgb(71, 19, 33)' }}> Win the race to <span style={{ color: 'rgb(34, 28, 148)' }}><strong>get the best candidates</strong></span> and <span style={{ color: 'rgb(34, 28, 148)' }}><strong>hire applicants</strong></span>   faster.</h3>
           </div>
 
           <div className="feature col-md-3 py-3 text-start">
@@ -33,10 +33,10 @@ function HomePage() {
                   <Card.Body>
                     <Card.Title>
                       <Image src="/job-somely-icon6.png" style={{ height: "65px" }} />
-                      <h4 style={{ color: 'rgb(46, 45, 64)' }}>Discover Employers</h4>
+                      <h4 style={{ color: 'rgb(34, 28, 148)' }}>Discover Employers</h4>
                     </Card.Title>
 
-                    <Card.Text style={{ color: 'rgb(214, 28, 78)' }}>
+                    <Card.Text style={{ color: 'rgb(71, 19, 33)' }}>
                       Jobsomely brings you the latest insights into top companies to work for. Find out your future companies and apply for your next role.
                     </Card.Text>
                   </Card.Body>
@@ -47,9 +47,9 @@ function HomePage() {
                   <Card.Body>
                     <Card.Title>
                       <Image src="/job-somely-icon4.png" style={{ height: "65px" }} />
-                      <h4 style={{ color: 'rgb(46, 45, 64)' }}>Job postings always up to date</h4>
+                      <h4 style={{ color: 'rgb(34, 28, 148)' }}>Job postings always up to date</h4>
                     </Card.Title>
-                    <Card.Text style={{ color: 'rgb(214, 28, 78)' }}>
+                    <Card.Text style={{ color: 'rgb(71, 19, 33)' }}>
                       Job postings are always up to date and can be centrally created, edited, published and closed with softgarden. Your job postings are automatically published on your careers page.
                     </Card.Text>
                   </Card.Body>
@@ -60,9 +60,9 @@ function HomePage() {
                   <Card.Body>
                     <Card.Title>
                       <Image src="/job-somely-icon5.png" style={{ height: "65px" }} />
-                      <h4 style={{ color: 'rgb(46, 45, 64)' }}>Search function</h4>
+                      <h4 style={{ color: 'rgb(34, 28, 148)' }}>Search function</h4>
                     </Card.Title>
-                    <Card.Text style={{ color: 'rgb(214, 28, 78)' }}>
+                    <Card.Text style={{ color: 'rgb(71, 19, 33)' }}>
                       A detailed search feature allows you to find suitable candidates. You filter your search using criteria such as job title, city and surrounding area, work experience and much more.
                     </Card.Text>
                   </Card.Body>
@@ -75,14 +75,14 @@ function HomePage() {
               <Image src="/job-somely-about1.jpg" className="background-cover img-fluid fluid mx-auto d-block" style={{ height: "400px" }} alt="homepage about1" />
             </div>
             <div className="col" >
-              <h1 className='fw-bold mt-5 pt-5' style={{ color: 'rgb(46, 45, 64)' }}>Attract the best candidates for your team​</h1><br />
-              <h3 style={{ color: 'rgb(214, 28, 78)' }} >Impress <span style={{ color: 'rgb(46, 45, 64)' }}><strong>applicants</strong></span> with fast and efficient recruiting processes.From application through to <span style={{ color: 'rgb(46, 45, 64)' }}><strong>hiring.</strong></span> </h3>
+              <h1 className='fw-bold mt-5 pt-5' style={{ color: 'rgb(34, 28, 148)' }}>Attract the best candidates for your team​</h1><br />
+              <h3 style={{ color: 'rgb(71, 19, 33)' }} >Impress <span style={{ color: 'rgb(34, 28, 148)' }}><strong>applicants</strong></span> with fast and efficient recruiting processes.From application through to <span style={{ color: 'rgb(34, 28, 148)' }}><strong>hiring.</strong></span> </h3>
             </div>
           </div>
           <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4">
             <div className="col" >
-              <h1 className='fw-bold mt-5 pt-5' style={{ color: 'rgb(46, 45, 64)' }}>Post & Pray with Multiposting</h1><br />
-              <h3 style={{ color: 'rgb(214, 28, 78)' }} ><span style={{ color: 'rgb(46, 45, 64)' }}><strong> Post jobs</strong></span> in record time and publish them intelligently where they will be found by the right <span style={{ color: 'rgb(46, 45, 64)' }}><strong> candidates.</strong></span></h3>
+              <h1 className='fw-bold mt-5 pt-5' style={{ color: 'rgb(34, 28, 148)' }}>Post & Pray with Multiposting</h1><br />
+              <h3 style={{ color: 'rgb(71, 19, 33)' }} ><span style={{ color: 'rgb(34, 28, 148)' }}><strong> Post jobs</strong></span> in record time and publish them intelligently where they will be found by the right <span style={{ color: 'rgb(34, 28, 148)' }}><strong> candidates.</strong></span></h3>
             </div>
             <div className="col" >
               <Image src="/job-somely-about2.jpg" className="background-cover img-fluid fluid mx-auto d-block" style={{ height: "400px" }} alt="homepage about2" />
@@ -93,8 +93,8 @@ function HomePage() {
               <Image src="/job-somely-about3.jpg" className="background-cover img-fluid fluid mx-auto d-block" style={{ height: "400px" }} alt="homepage about1" />
             </div>
             <div className="col" >
-              <h1 className='fw-bold mt-5 pt-5' style={{ color: 'rgb(46, 45, 64)' }}>Shorter onboarding and faster productivity</h1><br />
-              <h3 style={{ color: 'rgb(214, 28, 78)' }} >Our <span style={{ color: 'rgb(46, 45, 64)' }}><strong>Employees</strong></span> hired through referrals start <span style={{ color: 'rgb(46, 45, 64)' }}><strong>their jobs</strong></span>   more quickly, settle in faster and are productive <span style={{ color: 'rgb(46, 45, 64)' }}><strong>in a shorter time.</strong></span></h3>
+              <h1 className='fw-bold mt-5 pt-5' style={{ color: 'rgb(34, 28, 148)' }}>Shorter onboarding and faster productivity</h1><br />
+              <h3 style={{ color: 'rgb(71, 19, 33)' }} >Our <span style={{ color: 'rgb(34, 28, 148)' }}><strong>Employees</strong></span> hired through referrals start <span style={{ color: 'rgb(34, 28, 148)' }}><strong>their jobs</strong></span>   more quickly, settle in faster and are productive <span style={{ color: 'rgb(34, 28, 148)' }}><strong>in a shorter time.</strong></span></h3>
             </div>
           </div>
         </div>

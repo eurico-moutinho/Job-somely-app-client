@@ -28,42 +28,43 @@ function CompaniesListPage() {
 
 
   return (
-    <div className="CompaniesListPage">
+    <div className="CompaniesListPage" style={{ backgroundColor: 'rgb(234, 243, 248) ' }} >
       <header className="row">
 
         <div className="col">
 
-          <Image src="/job-somely-header2.png" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-80" alt="companies header" />
+          <Image src="/job-somely-header21.jpg" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-80" alt="companies header" />
 
         </div>
       </header>
       <div className="container">
 
         <div className="my-5">
-          <h2 className="mb-4 fw-bold">Companies</h2>
-          <p>We are only working with the best companies all ovver the world. Companies are eveluated on their office, salary and culture.</p>
-          <p>They are all great places to work and we can vouch for them.</p>
+          <h2 className="mb-4 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Companies</h2>
+          <p style={{ color: 'rgb(71, 19, 33)' }}>We are only working with the best companies all ovver the world. Companies are eveluated on their office, salary and culture.</p>
+          <p style={{ color: 'rgb(71, 19, 33)' }}>They are all great places to work and we can vouch for them.</p>
         </div> <hr />
       </div>
       <div className="container mt-5">
-        <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25 shadow-lg">
+        <div className="album my-5 pb-2 px-4 shadow-lg" style={{ backgroundColor: 'rgb(255, 225, 148)' }}>
 
           <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5">
 
             {companies.map((company) => {
               return (
                 <div className="col" key={company._id}>
-                  <Card className="pagecard mx-2 shadow-lg" >
-                    <Card.Header className="fw-bold" as="h5">{company.name}</Card.Header>
+                  <Card className="pagecard mx-2 shadow-lg" style={{ backgroundColor: 'rgb(234, 243, 248)' }} >
+                    <Card.Header className="fw-bold" as="h5" style={{ color: 'rgb(34, 28, 148)' }}>{company.name}</Card.Header>
                     <Card.Body>
-                      <Card.Title>Location: { }</Card.Title>
-                      <Card.Text>
+                      <Card.Title style={{ color: 'rgb(71, 19, 33)' }} >Location: { }</Card.Title>
+                      <Card.Text style={{ color: 'rgb(34, 28, 148)' }}>
                         {company.address}
                       </Card.Text>
                       {isLoggedIn && (
-                        <Button className="bg-gradient" variant="primary"><NavLink to={`/companies/${company._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}><NavLink to={`/companies/${company._id}`}><p className=" m-0" style={{ color: 'rgb(41, 52, 98)' }}>More Details</p></NavLink></Button>)}
                       {!isLoggedIn && (
-                        <Button className="bg-gradient" variant="primary"><NavLink to={`/login`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}><NavLink to={`/login`}><p className=" m-0" style={{ color: 'rgb(41, 52, 98)' }}>More Details</p></NavLink></Button>)}
+
                     </Card.Body>
                   </Card>
                 </div>
@@ -72,7 +73,7 @@ function CompaniesListPage() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

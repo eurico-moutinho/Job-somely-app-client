@@ -102,11 +102,11 @@ function AddEditCompany(props) {
 
 
       <div className="card mx-4 mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
-        <div className="card-body py-5 px-md-5">
+        <div className="card-body py-5 px-md-5" style={{ backgroundColor: 'rgb(255, 225, 148)' }}>
 
-          <div className="row d-flex justify-content-center">
+          <div className="row d-flex justify-content-center" >
             <div className="col-lg-8">
-              <h2 className="fw-bold mb-4">Company Profile</h2>
+              <h2 className="fw-bold mb-4" style={{ color: 'rgb(34, 28, 148)' }}>Company Profile</h2>
               {errorMsg &&
                 <p classNameName="error">
                   {errorMsg}
@@ -116,7 +116,7 @@ function AddEditCompany(props) {
                 <div className="row">
                   <div className="form-outline mb-4">
                     <div className="form-outline">
-                      <label className="form-label">Company Name</label>
+                      <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Company Name</label>
                       <input type="text"
                         name="name"
                         value={name}
@@ -128,7 +128,7 @@ function AddEditCompany(props) {
                 <div className="row">
                   <div className="form-outline mb-4">
                     <div className="form-outline">
-                      <label className="form-label">Company Description</label>
+                      <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Company Description</label>
                       <textarea
                         type="text"
                         name="description"
@@ -141,7 +141,7 @@ function AddEditCompany(props) {
                 <div className="row">
                   <div className="form-outline mb-4">
                     <div className="form-outline">
-                      <label className="form-label">Company Location</label>
+                      <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Company Location</label>
                       <input
                         type="text"
                         name="address"
@@ -151,15 +151,21 @@ function AddEditCompany(props) {
                   </div>
                 </div>
                 <div>
-                  <Button className="bg-gradient text-white px-3 mx-4 mb-4" variant="danger" onClick={deleteCompany}>Delete The Company Profile</Button>
+                  <div>
+                    <NavLink to="/jobs/create">
+                      <Button
+                        className="px-5  mb-4" style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }} >Add jobs</Button>
+                    </NavLink>
+
+                  </div>
+
+
                   <Button type="submit"
-                    className="bg-gradient text-white px-5 mb-4">Save Changes</Button>
+                    className="px-5 mb-4" style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }} >Save Changes</Button>
                 </div>
-                <div>
-                  <NavLink to="/jobs/create">
-                    <Button className="px-5 text-white bg-gradient">Add jobs</Button>
-                  </NavLink>
-                </div>
+
+                <Button className=" px-8 mx-5 mb-8" style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }} onClick={deleteCompany}>Delete The Company Profile</Button>
+
               </Form>
             </div>
           </div>

@@ -59,8 +59,8 @@ function JobsListPage() {
       <div className="container">
 
         <div className="my-5">
-          <h2 className="mb-4 fw-bold" style={{ color: 'rgb(46, 45, 64)' }}>Job Opportunities</h2>
-          <p className=" mb-0 " style={{ color: 'rgb(214, 28, 78)' }}>Looking for the next step in your career? Maybe it is the first step. Wherever you are in your life, you are in the correct place.</p>
+          <h2 className="mb-4 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Job Opportunities</h2>
+          <p className=" mb-0 " style={{ color: 'rgb(71, 19, 33)' }}>Looking for the next step in your career? Maybe it is the first step. Wherever you are in your life, you are in the correct place.</p>
         </div> <hr />
 
         <div className="row my-5" >
@@ -68,8 +68,8 @@ function JobsListPage() {
             <div className="card card-style13" style={{ backgroundColor: 'rgb(245, 245, 245,0)' }}>
               <div className="card-body" >
                 <span className="icon-circle green mb-4"><i className="ti-bar-chart"></i></span>
-                <h3 className="h5 fw-bold" style={{ color: 'rgb(46, 45, 64)' }}>Post your job</h3>
-                <p className="w-95 w-lg-100 display-30" style={{ color: 'rgb(214, 28, 78)' }}>Tell us what you’re looking for with easy-to-use job description templates and  <span style={{ color: 'rgb(46, 45, 64)' }}><strong>Jobsomely</strong></span> will find relevant candidates.</p>
+                <h3 className="h5 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Post your job</h3>
+                <p className="w-95 w-lg-100 display-30" style={{ color: 'rgb(71, 19, 33)' }}>Tell us what you’re looking for with easy-to-use job description templates and  <span style={{ color: 'rgb(34, 28, 148)' }}><strong>Jobsomely</strong></span> will find relevant candidates.</p>
               </div>
             </div>
           </div>
@@ -77,8 +77,8 @@ function JobsListPage() {
             <div className="card card-style13" style={{ backgroundColor: 'rgb(245, 245, 245,0)' }}>
               <div className="card-body">
                 <span className="icon-circle orange mb-4"><i className="ti-ruler-pencil"></i></span>
-                <h3 className="h5 fw-bold" style={{ color: 'rgb(46, 45, 64)' }}>Get great applicants, fast</h3>
-                <p className="w-95 w-lg-100 display-30" style={{ color: 'rgb(214, 28, 78)' }}>People come to <span style={{ color: 'rgb(46, 45, 64)' }}><strong>Jobsomely</strong></span> data to match your job with a person’s skills, experience, and goals. This personalised targeting puts your job in front of relevant matches to make it easier for them to apply.</p>
+                <h3 className="h5 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Get great applicants, fast</h3>
+                <p className="w-95 w-lg-100 display-30" style={{ color: 'rgb(71, 19, 33)' }}>People come to <span style={{ color: 'rgb(34, 28, 148)' }}><strong>Jobsomely</strong></span> data to match your job with a person’s skills, experience, and goals. This personalised targeting puts your job in front of relevant matches to make it easier for them to apply.</p>
               </div>
             </div>
           </div>
@@ -86,8 +86,8 @@ function JobsListPage() {
             <div className="card card-style13" style={{ backgroundColor: 'rgb(245, 245, 245,0)' }}>
               <div className="card-body">
                 <span className="icon-circle blue mb-4"><i className="ti-layers-alt"></i></span>
-                <h3 className="h5 fw-bold" style={{ color: 'rgb(46, 45, 64)' }}>Access an engaged community</h3>
-                <p className="w-95 w-lg-100 display-30" style={{ color: 'rgb(214, 28, 78)' }}>People come to <span style={{ color: 'rgb(46, 45, 64)' }}><strong>Jobsomely</strong></span>  every day to discover opportunities and build their careers. We put your job in front of the most qualified members — and those open to new opportunities.</p>
+                <h3 className="h5 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Access an engaged community</h3>
+                <p className="w-95 w-lg-100 display-30" style={{ color: 'rgb(71, 19, 33)' }}>People come to <span style={{ color: 'rgb(34, 28, 148)' }}><strong>Jobsomely</strong></span>  every day to discover opportunities and build their careers. We put your job in front of the most qualified members — and those open to new opportunities.</p>
               </div>
             </div>
           </div>
@@ -106,24 +106,24 @@ function JobsListPage() {
 
           <Button variant="outline-success" type='submit' style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}>Search</Button>
         </Form>
-        <div className="album my-5 pb-2 px-4 shadow-lg">
+        <div className="album my-5 pb-2 px-4 shadow-lg" style={{ backgroundColor: 'rgb(255, 225, 148)' }}>
 
           <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5">
 
             {jobs.map((job) => {
               return (
                 <div key={job._id} className="col">
-                  <Card className="pagecard mx-2 shadow-lg" style={{ backgroundColor: 'rgb(245, 245, 245,0)' }}>
-                    <Card.Header className="fw-bold" as="h5">{job.title}</Card.Header>
+                  <Card className="pagecard mx-2 shadow-lg" style={{ backgroundColor: 'rgb(234, 243, 248)' }}>
+                    <Card.Header className="fw-bold" as="h5" style={{ color: 'rgb(34, 28, 148)' }} >{job.title}</Card.Header>
                     <Card.Body>
-                      <Card.Title>Company: {job.company.name}</Card.Title>
-                      <Card.Text>
+                      <Card.Title style={{ color: 'rgb(34, 28, 148)' }} >Company: {job.company.name}</Card.Title>
+                      <Card.Text style={{ color: 'rgb(71, 19, 33)' }} >
                         Level: {job.level}
                       </Card.Text>
                       {isLoggedIn && (
-                        <Button className="bg-gradient" variant="primary"><NavLink to={`/jobs/${job._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}><NavLink to={`/jobs/${job._id}`}><p className=" m-0" style={{ color: 'rgb(41, 52, 98)' }}>More Details</p></NavLink></Button>)}
                       {!isLoggedIn && (
-                        <Button className="bg-gradient" variant="primary"><NavLink to={`/login`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}><NavLink to={`/login`}><p className=" m-0" style={{ color: 'rgb(41, 52, 98)' }}>More Details</p></NavLink></Button>)}
                     </Card.Body>
                   </Card>
                 </div>

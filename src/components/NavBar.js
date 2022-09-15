@@ -39,7 +39,7 @@ function NavBar() {
                                 {user.userType === "company" && (
                                     <Nav.Link href="/mycompany" style={{ color: 'rgb(76, 76, 109)' }} >My Company</Nav.Link>
                                 )}
-                                <div className="text-white my-2 mx-2 px-2">{user && user.name}</div>
+                                <div className=" my-2 mx-2 px-2" style={{ color: 'rgb(76, 76, 109)' }} >{user && user.name}</div>
                                 <Nav.Link onClick={logOutAndNavigate} style={{ color: 'rgb(76, 76, 109)' }}>Logout</Nav.Link>
                             </>
                         )}

@@ -92,8 +92,8 @@ function AddEditCandidate(props) {
             linkedin
         }
         console.log(requestBody)
-       if (candidateId == '') {
-           await axios
+        if (candidateId == '') {
+            await axios
                 .post(
                     `https://jobsomely.herokuapp.com/api/candidates`,
                     requestBody,
@@ -106,7 +106,7 @@ function AddEditCandidate(props) {
                 })
                 .catch((error) => console.log(error));
         } else {
-           await axios
+            await axios
                 .put(
                     `https://jobsomely.herokuapp.com/api/candidates/${candidateId}`,
                     requestBody,
@@ -114,7 +114,7 @@ function AddEditCandidate(props) {
                 )
                 .then((response) => {
                     const candidateId = response.data._id;
-                    
+
                     navigate(`/candidates/${candidateId}`);
                 })
                 .catch((error) => console.log(error));
@@ -136,17 +136,17 @@ function AddEditCandidate(props) {
     };
     if (isLoading) return <p><img src={'https://c.tenor.com/y6RVjd7Dz8sAAAAC/loading-waiting.gif'}/></p>;
     return (
-        <div className="text-center">
+        <div className="text-center" style={{ backgroundColor: 'rgb(234, 243, 248) ' }}>
 
             <div className="p-5 bg-image" style={{ backgroundImage: `url(job-somely-header3.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
 
 
-            <div className="card mx-4 mb-3 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
+            <div className="card mx-4 mb-3 mx-md-5 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", backgroundColor: 'rgb(255, 225, 148)', background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
                 <div className="card-body py-2 px-md-5">
 
                     <div className="row d-flex justify-content-center">
                         <div className="col-lg-8">
-                            <h2 className="fw-bold mb-4">Candidate Profile</h2>
+                            <h2 className="fw-bold mb-4" style={{ color: 'rgb(34, 28, 148)' }}>Candidate Profile</h2>
                             {errorMsg &&
                                 <p classNameName="error">
                                     {errorMsg}
@@ -157,7 +157,7 @@ function AddEditCandidate(props) {
                                 <div className="row">
                                     <div className="col-md-6 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">First Name</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>First Name</label>
                                             <input type="text"
                                                 name="firstName"
                                                 value={firstName}
@@ -166,7 +166,7 @@ function AddEditCandidate(props) {
                                     </div>
                                     <div className="col-md-6 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">Last Name</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Last Name</label>
                                             <input type="text"
                                                 name="lastName"
                                                 value={lastName}
@@ -177,7 +177,7 @@ function AddEditCandidate(props) {
                                 <div className="row">
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">Profile Picture</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Profile Picture</label>
                                             <input type="file"
                                                 name="imageUrl"
                                                 onChange={(e) => handleFileUpload(e)}
@@ -191,7 +191,7 @@ function AddEditCandidate(props) {
                                 <div className="row">
                                     <div className="col-md-4 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label" >Email</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }} >Email</label>
                                             <input type="email"
                                                 name="email"
                                                 value={email}
@@ -200,7 +200,7 @@ function AddEditCandidate(props) {
                                     </div>
                                     <div className="col-md-4 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">Phone Number</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Phone Number</label>
                                             <input type="text"
                                                 name="phone"
                                                 value={phone}
@@ -209,7 +209,7 @@ function AddEditCandidate(props) {
                                     </div>
                                     <div className="col-md-4 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label" required>Current Location</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Current Location</label>
                                             <input type="text"
                                                 name="location"
                                                 value={location}
@@ -220,7 +220,7 @@ function AddEditCandidate(props) {
                                 <div className="row">
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">About</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>About</label>
                                             <textarea type="text"
                                                 name="about"
                                                 value={about}
@@ -232,7 +232,7 @@ function AddEditCandidate(props) {
                                 <div className="row">
                                     <div className="col-md-6 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">Primary Role</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}> Role</label>
                                             <input type="text"
                                                 name="role"
                                                 value={role}
@@ -242,7 +242,7 @@ function AddEditCandidate(props) {
 
                                     <div className="col-md-6 mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">Skills</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Skills</label>
                                             <input type="text"
                                                 name="skills"
                                                 value={skills}
@@ -254,7 +254,7 @@ function AddEditCandidate(props) {
                                 <div className="row">
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label">LinkedIn Profile Link</label>
+                                            <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>LinkedIn Profile Link</label>
                                             <input type="url"
                                                 name="linkedin"
                                                 value={linkedin}
@@ -262,9 +262,9 @@ function AddEditCandidate(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <Button className="bg-gradient text-white px-3 mx-4 mb-4" variant="danger" onClick={deleteCandidate}>Delete Your Profile</Button>
-                                <Button type="submit"
-                                    className="bg-gradient text-white px-4 mb-4">Save Changes</Button>
+                                <Button className=" px-3 mx-4 mb-4" variant="danger" onClick={deleteCandidate} style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}>Delete Your Profile</Button>
+                                <Button type="submit" className=" px-4 mb-4"
+                                    style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }} >Save Changes</Button>
                             </Form>
                         </div>
                     </div>

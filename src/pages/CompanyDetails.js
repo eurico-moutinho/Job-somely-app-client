@@ -31,38 +31,39 @@ function CompanyDetailsPage(props) {
 
 
     return (
-        <div className="CompanyDetails">
-            <div className="p-5 bg-image" style={{ backgroundImage: `url(/job-somely-header5.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
+        <div className="CompanyDetails" style={{ backgroundColor: 'rgb(234, 243, 248) ' }} >
+            <div className="p-5 bg-image" style={{ backgroundImage: `url(/job-somely-home-header81.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
             {company && (
                 <div className="mx-5">
-                    <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-75px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
+                    <div className="card mb-5 mx-md-5 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-75px", backgroundColor: 'rgb(255, 225, 148) ', background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(10px)" }}>
                         <div className=" py-4">
                             <div className="container">
                                 <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4">
-                                    <div className="text-center col-md-5 border">
+                                    <div className="text-center col-md-5 ">
                                         <div className="py-5">
                                             <div>
-                                                <h2>{company.name}</h2>
+                                                <h2 style={{ color: 'rgb(34, 28, 148)' }}>{company.name}</h2>
                                             </div>
                                             <div>
-                                                <p><strong>Company Location:</strong> {company.address}</p>
+                                                <p style={{ color: 'rgb(71, 19, 33)' }} ><strong style={{ color: 'rgb(34, 28, 148)' }}>Company Location:</strong> {company.address}</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="text-start col-md-6 px-5">
-                                        <p><strong>Company Description:</strong></p>
-                                        <p style={{ whiteSpace: 'pre-wrap' }}>{company.description}</p>
+                                        <p style={{ color: 'rgb(34, 28, 148)' }}><strong>Company Description:</strong></p>
+                                        <p style={{ whiteSpace: 'pre-wrap', color: 'rgb(71, 19, 33)' }}>{company.description}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="mt-4">
                                 <NavLink className="mx-2" to="/companies">
-                                    <Button className="bg-gradient text-white px-5 mb-4">Back to Companies</Button>
+                                    <Button variant="outline-success" style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}>Back to Companies</Button>
                                 </NavLink>
 
+
                                 <NavLink className="mx-2" to="/jobs">
-                                    <Button className="bg-gradient text-white px-5 mb-4">Back to Jobs</Button>
+                                    <Button variant="outline-success" style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}>Back to Jobs</Button>
                                 </NavLink>
                             </div>
                         </div>
@@ -74,7 +75,7 @@ function CompanyDetailsPage(props) {
             }
 
             <div className="container mt-5">
-                <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25 shadow-lg">
+                <div className="album my-5 pb-2 px-4 shadow-lg" style={{ backgroundColor: 'rgb(255, 225, 148)' }}>
 
                     <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5">
 
@@ -82,14 +83,15 @@ function CompanyDetailsPage(props) {
                         {company &&
                             company.jobs.map((job) => (
                                 <div key={job._id} className="col">
-                                    <Card className="pagecard mx-2 shadow-lg">
-                                        <Card.Header className="fw-bold" as="h5">{job.title}</Card.Header>
+                                    <Card className="pagecard mx-2 shadow-lg" style={{ backgroundColor: 'rgb(234, 243, 248)' }}>
+                                        <Card.Header className="fw-bold" as="h5" style={{ color: 'rgb(34, 28, 148)' }}>{job.title}</Card.Header>
                                         <Card.Body>
-                                            <Card.Title>Level: {job.level}</Card.Title>
-                                            <Card.Text>
+                                            <Card.Title style={{ color: 'rgb(34, 28, 148)' }}>Level: {job.level}</Card.Title>
+                                            <Card.Text style={{ color: 'rgb(71, 19, 33)' }}>
                                                 Skills: {job.skills}
                                             </Card.Text>
-                                            <Button className="bg-gradient" variant="primary"><NavLink to={`/jobs/${job._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
+                                            <Button style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }} ><NavLink to={`/jobs/${job._id}`}><p className=" m-0" style={{ color: 'rgb(41, 52, 98)' }}>More Details</p></NavLink></Button>
+
                                         </Card.Body>
                                     </Card>
 
