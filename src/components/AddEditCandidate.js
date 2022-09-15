@@ -18,7 +18,7 @@ function AddEditCandidate(props) {
     const [location, setLocation] = useState("");
     const [about, setAbout] = useState("");
     const [skills, setSkills] = useState("");
-    const [image, setImage] = useState("");
+    const [imageUrl, setimageUrl] = useState("");
     const [linkedin, setLinkedin] = useState("");
 
     const [errorMsg, setErrorMsg] = useState("");
@@ -30,14 +30,14 @@ function AddEditCandidate(props) {
     const handleFileUpload = (e) => {
         const storedToken = localStorage.getItem('authToken');
         const uploadData = new FormData();
-        uploadData.append("image", e.target.files[0]);
+        uploadData.append("imageUrl", e.target.files[0]);
 
     return axios.post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then(res => res.data)
           .then(response => {
             console.log("response is: ", response);
             // response carries "fileUrl" which we can use to update the state
-            setImage(response.fileUrl);
+            setImageUrl(response.fileUrl);
           })
           .catch(err => console.log("Error while uploading the file: ", err));
   };
@@ -88,7 +88,7 @@ function AddEditCandidate(props) {
             location,
             about,
             skills,
-            image,
+            imageUrl,
             linkedin
         }
         console.log(requestBody)
@@ -179,7 +179,7 @@ function AddEditCandidate(props) {
                                         <div className="form-outline">
                                             <label className="form-label">Profile Picture</label>
                                             <input type="file"
-                                                name="image"
+                                                name="imageUrl"
                                                 onChange={(e) => handleFileUpload(e)}
                                                 // value={image}
                                                 // pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)"
