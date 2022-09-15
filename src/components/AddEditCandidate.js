@@ -18,7 +18,7 @@ function AddEditCandidate(props) {
     const [location, setLocation] = useState("");
     const [about, setAbout] = useState("");
     const [skills, setSkills] = useState("");
-    const [imageUrl, setimageUrl] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
     const [linkedin, setLinkedin] = useState("");
 
     const [errorMsg, setErrorMsg] = useState("");
@@ -59,7 +59,7 @@ function AddEditCandidate(props) {
                 setLocation(oneCandidate.location);
                 setAbout(oneCandidate.about);
                 setSkills(oneCandidate.skills);
-                setImage(oneCandidate.image);
+                setImageUrl(oneCandidate.image);
                 setLinkedin(oneCandidate.linkedin)
             })
             .catch((error) => console.log(error));
