@@ -15,7 +15,7 @@ function CandidatesListPage() {
 
   const getAllCandidates = () => {
     axios
-      .get(`https://awful-red-kimono.cyclic.app/api/candidates`,
+      .get(`https://jobsomely.onrender.com/api/candidates`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) =>{
