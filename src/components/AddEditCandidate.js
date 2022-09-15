@@ -88,7 +88,7 @@ function AddEditCandidate(props) {
             location,
             about,
             skills,
-            imageUrl,
+            imageUrl: imageUrl,
             linkedin
         }
         console.log(requestBody)
