@@ -35,7 +35,7 @@ function AddEditCandidate(props) {
     return axios.post(`https://jobsomely.herokuapp.com/api/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then(res => res.data)
           .then(response => {
-            console.log("response is: ", response);
+            
             // response carries "fileUrl" which we can use to update the state
             setImageUrl(response.fileUrl);
           })
