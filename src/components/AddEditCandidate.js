@@ -180,6 +180,7 @@ function AddEditCandidate(props) {
                                             <label className="form-label" style={{ color: 'rgb(34, 28, 148)' }}>Profile Picture</label>
                                             <input type="file"
                                                 name="imageUrl"
+                                                accept="image/*"
                                                 onChange={(e) => handleFileUpload(e)}
                                                 // value={image}
                                                 // pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)"

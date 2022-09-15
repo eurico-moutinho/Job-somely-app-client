@@ -55,32 +55,219 @@ This app is an employment website for job listings.
 - My Profile Page (private only)
 - 404 Page (public)
 
-### Components
+## Server / Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Models
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+User model
 
-### Code Splitting
+```javascript
+{
+    email: {
+      type: String,
+      required: [true, "Email is required."],
+      match: [/^\S+@\S+\.\S+$/, "Please use a valid e-mail address."],
+      trim: true,
+      unique: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      trim: true,
+      match: [/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/],
+    },
+    name: {
+      type: String,
+      unique: true,
+      required: [true, "You need to have a username"],
+    },
+    userType: {
+      type: String,
+      enum: ['candidate', 'company', 'admin'],
+      default: 'candidate',
+      required: true
+    },
+    candidate: {
+      type: Schema.Types.ObjectId,
+      ref: 'Candidate'
+    },
+    company: {
+      type: Schema.Types.ObjectId,
+      ref: 'Company'
+    }
+  }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Job model
 
-### Analyzing the Bundle Size
+```javascript
+ {
+        title: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        company: {
+            type: Schema.Types.ObjectId,
+            ref: 'Company',
+            required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        skills: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        level: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,
+        },
+        location: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        applicants: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Candidate'
+        }]
+    }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Company model
 
-### Making a Progressive Web App
+```javascript
+ {
+        name: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        jobs: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Job'
+        }],
+        description: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        address: {
+            type: String
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,
+        },
+    }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Candidate model
 
-### Advanced Configuration
+```javascript
+ {
+        firstName: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        lastName: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        role: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        email: {
+            type: String,
+            required: [true, "Email is required."],
+            match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
+            trim: true,
+            unique: true,
+            lowercase: true
+        },
+        phone: {
+            type: Number,
+            required: true,
+            trim: true
+        },
+        location: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        about: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        skills: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        imageUrl: {
+            type: String
+        },
+        linkedin: {
+            type: String,
+            required: true
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,
+        },
+    }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### API Endpoints/Backend Routes
 
-### Deployment
+| HTTP Method | URL                         | Request Body                 | Success status | Error Status | Description                                                  |
+| ----------- | --------------------------- | ---------------------------- | -------------- | ------------ | ------------------------------------------------------------ |
+| GET         | `/verify    `           	|                 			   | 200            | 404          | Validates the request payload                                |
+| POST        | `/signup`                   | {username, email, password, userType}| 200    | 404          | Checks if fields not empty (422) and user not exists (409), then create user with encrypted password, and store user in session |
+| POST        | `/login`                    | {username, password}         | 200            | 401          | Checks if fields not empty (422), if user exists (404), and if password matches (404), then stores user in session    |
+| POST        | `/upload`                 	|	   						   |                | 400          | Uploads image files                                          |
+| GET         | `/candidates`               |                              |                | 400          | Show candidates list                                         |
+| POST        | `/candidates`               | {firstName, lastName, role, email, phone, location, about, skills, imageUrl, linkedin, owner} | | | Create candidate profile|
+| GET         | `/candidates/:candidateId`  |                              |                |              | Show candidate details                                       |
+| PUT         | `/candidates/:candidateId`  |                              | 201            | 400          | Updates the candidate details                                |
+| DELETE      | `/candidates/:candidateId`  |                              | 201            | 400          | delete element                                               |
+| GET         | `/myprofile`                | {firstName, lastName, role, email, phone, location, about, skills, imageUrl, linkedin, owner}|               | 400          | Show current user profile |
+| GET         | `/companies`                |                              |                |              | Show companies list                                          |
+| POST        | `/companies`               	| {name, jobs, description, address, owner}|    |              | Creates company elements                                     |
+| GET         | `/companies/:companyId`     |                              |                | 400          | Show company details                                         |
+| PUT         | `/companies/:companyId`     |                              | 201            | 400          | Updates the company details                                  |
+| DELETE      | `/companies/:companyId`     |                              | 201            | 400          | delete element                                               |
+| GET         | `/myprofile`                | {name, jobs, description, address, owner}|    | 400          | Show current user company                                    |
+| GET         | `/jobs`                     |                              |                |              | Show jobs list                                               |
+| POST        | `/jobs`                 	| {title, description, skills, level, location, owner}|  |     | Creates job elements                                         |
+| GET         | `/jobs/:jobId`              |                              |                | 400          | Show job details                                             |
+| PUT         | `/jobs/:jobId`              |                              | 201            | 400          | Updates the job details                                      |
+| DELETE      | `/job/:jobId`               |                              | 201            | 400          | delete element                                               |
+| GET         | `/searchjob`                |                              |                | 400          | Search job by title                                          |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
+## Links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Client repository Link](https://github.com/alikedo/Job-somely-app/tree/main/Job-somely-app-client)
+
+[Server repository Link](https://github.com/alikedo/Job-somely-app/tree/main/Job-somely-app-server)
+
+[Deployed App Link](https://jobsomely.netlify.app)
