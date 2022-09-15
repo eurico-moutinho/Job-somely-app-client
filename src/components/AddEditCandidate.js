@@ -32,7 +32,7 @@ function AddEditCandidate(props) {
         const uploadData = new FormData();
         uploadData.append("imageUrl", e.target.files[0]);
 
-    return axios.post(`https://jobsomely.onrender.com/api/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` } })
+    return axios.post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then(res => res.data)
           .then(response => {
             console.log("response is: ", response);
@@ -44,7 +44,7 @@ function AddEditCandidate(props) {
 
     const getCandidate = () => {
         axios
-            .get(`https://jobsomely.onrender.com/api/myprofile`,
+            .get(`https://awful-red-kimono.cyclic.app/api/myprofile`,
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then((response) => {
                 const oneCandidate = response.data;
@@ -95,7 +95,7 @@ function AddEditCandidate(props) {
        if (candidateId == '') {
            await axios
                 .post(
-                    `https://jobsomely.onrender.com/api/candidates`,
+                    `https://awful-red-kimono.cyclic.app/api/candidates`,
                     requestBody,
                     { headers: { Authorization: `Bearer ${storedToken}` } }
                 )
@@ -108,7 +108,7 @@ function AddEditCandidate(props) {
         } else {
            await axios
                 .put(
-                    `https://jobsomely.onrender.com/api/candidates/${candidateId}`,
+                    `https://awful-red-kimono.cyclic.app/api/candidates/${candidateId}`,
                     requestBody,
                     { headers: { Authorization: `Bearer ${storedToken}` } }
                 )
@@ -125,7 +125,7 @@ function AddEditCandidate(props) {
         // Make a DELETE request to delete the candidate
         axios
             .delete(
-                `https://jobsomely.onrender.com/api/candidates/${candidateId}`,
+                `https://awful-red-kimono.cyclic.app/api/candidates/${candidateId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then(() => {

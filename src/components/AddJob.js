@@ -21,7 +21,7 @@ function AddJob(props) {
 
     const getCompany = () => {
         axios
-            .get(`https://jobsomely.onrender.com/api/mycompany`,
+            .get(`https://awful-red-kimono.cyclic.app/api/mycompany`,
                 { headers: { Authorization: `Bearer ${storedToken}` } })
             .then((response) => {
                 const oneCompany = response.data;
@@ -50,7 +50,7 @@ function AddJob(props) {
 
         axios
             .post(
-                `https://jobsomely.onrender.com/api/jobs`,
+                `https://awful-red-kimono.cyclic.app/api/jobs`,
                 requestBody,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )

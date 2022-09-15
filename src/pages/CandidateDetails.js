@@ -17,7 +17,7 @@ function CandidateDetailsPage(props) {
     const getCandidate = () => {
         setMessage("");
         axios
-            .get(`https://jobsomely.onrender.com/api/candidates/${candidateId}`,
+            .get(`https://awful-red-kimono.cyclic.app/api/candidates/${candidateId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
