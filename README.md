@@ -55,7 +55,7 @@ This app is an employment website for job listings.
 - My Profile Page (private only)
 - 404 Page (public)
 
-## Learn More
+### Components
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 

@@ -28,24 +28,19 @@ function AddEditCandidate(props) {
     const { isLoading } = useContext(AuthContext);
 
     const handleFileUpload = (e) => {
-        // console.log("The file to be uploaded is: ", e.target.files[0]);
-
+        const storedToken = localStorage.getItem('authToken');
         const uploadData = new FormData();
-
-        // imageUrl => this name has to be the same as in the model since we pass
-        // req.body to .create() method when creating a new movie in '/api/movies' POST route
         uploadData.append("image", e.target.files[0]);
 
-        axios
-            .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData,
-                { headers: { Authorization: `Bearer ${storedToken}` } })
-            .then(response => {
-                // console.log("response is: ", response);
-                // response carries "fileUrl" which we can use to update the state
-                setImage(response.data.fileUrl);
-            })
-            .catch(err => console.log("Error while uploading the file: ", err));
-    };
+    return axios.post(`${API_URL}/api/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .then(res => res.data)
+          .then(response => {
+            console.log("response is: ", response);
+            // response carries "fileUrl" which we can use to update the state
+            setImageUrl(response.fileUrl);
+          })
+          .catch(err => console.log("Error while uploading the file: ", err));
+  };
 
     const getCandidate = () => {
         axios
