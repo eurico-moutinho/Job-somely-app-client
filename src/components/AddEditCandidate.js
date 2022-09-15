@@ -37,7 +37,7 @@ function AddEditCandidate(props) {
           .then(response => {
             console.log("response is: ", response);
             // response carries "fileUrl" which we can use to update the state
-            setImageUrl(response.fileUrl);
+            setImage(response.fileUrl);
           })
           .catch(err => console.log("Error while uploading the file: ", err));
   };
