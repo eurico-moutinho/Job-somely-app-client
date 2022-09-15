@@ -32,7 +32,7 @@ function AddEditCandidate(props) {
         const uploadData = new FormData();
         uploadData.append("image", e.target.files[0]);
 
-    return axios.post(`${API_URL}/api/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` } })
+    return axios.post(`https://awful-red-kimono.cyclic.app/api/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then(res => res.data)
           .then(response => {
             console.log("response is: ", response);
