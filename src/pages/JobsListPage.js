@@ -13,7 +13,7 @@ function JobsListPage() {
   const navigate = useNavigate();
 
   const storedToken = localStorage.getItem("authToken");
-  const { isLoggedIn } = useContext(AuthContext);
+  
   const title = searchParams.get("q");
 
   const getAllJobs = () => {
@@ -42,6 +42,8 @@ function JobsListPage() {
     navigate(`/jobs/?q=${query}`);
     setSearchParams(title)
     };
+
+    const { isLoggedIn } = useContext(AuthContext);
 
   return (
 
