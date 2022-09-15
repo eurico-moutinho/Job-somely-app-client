@@ -266,6 +266,10 @@ Candidate model
 
 ## Links
 
+### Git
+
+The url to your repository and to your deployed project
+
 [Client repository Link](https://github.com/alikedo/Job-somely-app/tree/main/Job-somely-app-client)
 
 [Server repository Link](https://github.com/alikedo/Job-somely-app/tree/main/Job-somely-app-server)
