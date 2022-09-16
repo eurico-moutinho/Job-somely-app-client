@@ -275,3 +275,9 @@ The url to your repository and to your deployed project
 [Server repository Link](https://github.com/alikedo/Job-somely-app/tree/main/Job-somely-app-server)
 
 [Deployed App Link](https://jobsomely.netlify.app)
+
+### Slides
+
+The url to your presentation slides
+
+[Slides Link](https://docs.google.com/presentation/d/1M6Ub4YwKt31PoKETJdkIQhh2jtlLspbEk4E1lw-gDDI)

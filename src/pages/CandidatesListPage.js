@@ -45,7 +45,7 @@ function CandidatesListPage() {
 
         <div className="my-5">
           <h2 className="mb-4 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Candidates</h2>
-          <p style={{ color: 'rgb(71, 19, 33)' }}>Great work places should work with great candidates. Here you will find the largest high quality candidate pool in the world. All candidates are hand picked and vetted.</p>
+          <p style={{ color: 'rgb(71, 19, 33)' }}>Let the right people know you’re open to work.</p>
         </div> <hr />
       </div>
       <div className="container mt-5">

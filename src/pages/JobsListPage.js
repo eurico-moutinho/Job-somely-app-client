@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate,NavLink, useSearchParams } from "react-router-dom";
+import { useNavigate, NavLink, useSearchParams } from "react-router-dom";
 import { Card, Button, Image, Form } from 'react-bootstrap';
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"
@@ -13,7 +13,7 @@ function JobsListPage() {
   const navigate = useNavigate();
 
   const storedToken = localStorage.getItem("authToken");
-  
+
   const title = searchParams.get("q");
 
   const getAllJobs = () => {
@@ -27,23 +27,25 @@ function JobsListPage() {
 
   useEffect(() => {
     navigate(`/jobs/?q=${query}`);
-    if(title!==''){
+    if (title !== '') {
       axios
         .get(`https://jobsomely.herokuapp.com/api/jobs`,
           { headers: { Authorization: `Bearer ${storedToken}` } }
         )
-        .then( (response) => { 
-          setJobs(response.data.filter(job => { return job.title.toLowerCase().includes(title.toLowerCase())}))})
-        .catch((error) => console.log(error));}else{getAllJobs();}
+        .then((response) => {
+          setJobs(response.data.filter(job => { return job.title.toLowerCase().includes(title.toLowerCase()) }))
+        })
+        .catch((error) => console.log(error));
+    } else { getAllJobs(); }
   }, [storedToken, title]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     navigate(`/jobs/?q=${query}`);
     setSearchParams(title)
-    };
+  };
 
-    const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
 
@@ -60,7 +62,7 @@ function JobsListPage() {
 
         <div className="my-5">
           <h2 className="mb-4 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Job Opportunities</h2>
-          <p className=" mb-0 " style={{ color: 'rgb(71, 19, 33)' }}>Looking for the next step in your career? Maybe it is the first step. Wherever you are in your life, you are in the correct place.</p>
+          <p className=" mb-0 " style={{ color: 'rgb(71, 19, 33)' }}>An online job platform that targets your jobs to the right people..</p>
         </div> <hr />
 
         <div className="row my-5" >
@@ -101,7 +103,7 @@ function JobsListPage() {
             placeholder="Search Job"
             className="me-2 border border-2"
             aria-label="Search"
-            onChange={(e) => { setQuery(e.target.value)}}
+            onChange={(e) => { setQuery(e.target.value) }}
           />
 
           <Button variant="outline-success" type='submit' style={{ borderRadius: "40px", color: 'rgb(41, 52, 98)', border: "solid", backgroundColor: 'rgb(255, 225, 148)' }}>Search</Button>

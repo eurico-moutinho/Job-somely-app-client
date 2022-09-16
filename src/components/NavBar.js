@@ -19,9 +19,9 @@ function NavBar() {
     return (
         <Navbar className="fw-bold" style={{ backgroundColor: 'rgb(255, 225, 148)' }} collapseOnSelect expand="lg" variant="dark">
             <Container >
-                {/* <Nav.Link href="/">
-                    <Image src="/job-somely-logo3.png" height="30" className=" rounded d-inline-block align-text-top" alt="logo" />
-                </Nav.Link> */}
+                <Nav.Link href="/">
+                    <Image src="/job-somely-logo1.png" height="30" className=" rounded d-inline-block align-text-top" alt="logo" />
+                </Nav.Link>
                 <Navbar.Brand href="/" style={{ color: 'rgb(76, 76, 109)' }} >Jobsomely</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

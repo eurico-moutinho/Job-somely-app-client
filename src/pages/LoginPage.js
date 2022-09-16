@@ -48,6 +48,7 @@ function LoginPage(props) {
                                 <div className="row g-0" style={{ backgroundColor: 'rgb(255, 225, 148)' }}>
                                     <div className="col-md-6 col-lg-5 d-none d-md-block">
                                         <Image src="/job-somely-login.jpg" alt="login form" className="img-fluid h-100 rounded shadow-lg" />
+
                                     </div>
                                     <div className="col-md-6 col-lg-7 d-flex align-items-center">
                                         <div className="card-body p-4 p-lg-5 text-black">
@@ -56,7 +57,8 @@ function LoginPage(props) {
 
                                                 <div className="feature-icon d-flex align-items-center mb-3 pb-1">
 
-                                                    {/* <Image className="mx-auto" src="/job-somely-logo1.png" width={"100"} /> */}
+                                                    <Image className="mx-auto" src="/job-somely-logo1.png" width={"100"} />
+                                                    <h2 className="fw-normal mb-3 pb-3 col-md-6 col-lg-8  fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Jobsomely</h2>
                                                 </div>
 
 

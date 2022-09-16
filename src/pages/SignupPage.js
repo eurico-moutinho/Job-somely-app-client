@@ -56,12 +56,12 @@ function SignupPage(props) {
 
                       <div className="feature-icon d-flex align-items-center mb-3 pb-1">
 
-                        {/* <Image className="mx-auto" src="/job-somely-logo1.png" width={"100"} /> */}
-                        {/* <h2 className="text-center" style={{ color: 'rgb(34, 28, 148)' }}>Jobsomely</h2> */}
+                        <Image className="mx-auto" src="/job-somely-logo1.png" width={"100"} />
+                        <h2 className="fw-normal mb-3 pb-3 col-md-6 col-lg-8  fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Jobsomely</h2>
                       </div>
 
 
-                      <h5 className="fw-normal mb-3 pb-3  fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Create your account</h5>
+                      <h5 className="fw-normal mb-3 pb-3 col-md-6 col-lg-7  fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Create your account</h5>
                       {errorMessage && <p className="error-message text-danger fw-bold ">{errorMessage}</p>}
 
                       <div className="form-outline mb-4">

@@ -41,8 +41,8 @@ function CompaniesListPage() {
 
         <div className="my-5">
           <h2 className="mb-4 fw-bold" style={{ color: 'rgb(34, 28, 148)' }}>Companies</h2>
-          <p style={{ color: 'rgb(71, 19, 33)' }}>We are only working with the best companies all ovver the world. Companies are eveluated on their office, salary and culture.</p>
-          <p style={{ color: 'rgb(71, 19, 33)' }}>They are all great places to work and we can vouch for them.</p>
+          <p style={{ color: 'rgb(71, 19, 33)' }}>A hiring platform to quickly find, connect with, and manage candidates.</p>
+          <p style={{ color: 'rgb(71, 19, 33)' }}>Powerful collaboration and analytics tools to manage your candidate pipeline.</p>
         </div> <hr />
       </div>
       <div className="container mt-5">
