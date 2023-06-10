@@ -22,7 +22,7 @@ function AuthProviderWrapper(props) {
     if (storedToken) {
 
       axios.get(
-        `https://jobsomely.herokuapp.com/api/verify`,
+        `https://jobsomely.onrender.com/api/verify`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
         .then((response) => {

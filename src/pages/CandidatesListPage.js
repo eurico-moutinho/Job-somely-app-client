@@ -15,7 +15,7 @@ function CandidatesListPage() {
 
   const getAllCandidates = () => {
     axios
-      .get(`https://jobsomely.herokuapp.com/api/candidates`,
+      .get(`https://jobsomely.onrender.com/api/candidates`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => {

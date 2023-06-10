@@ -21,7 +21,7 @@ function JobDetailsPage(props) {
 
     const getJob = () => {
         axios
-            .get(`https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
+            .get(`https://jobsomely.onrender.com/api/jobs/${jobId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
@@ -35,7 +35,7 @@ function JobDetailsPage(props) {
     const applyJob = () => {
         setMessage("");
         axios
-            .post(`https://jobsomely.herokuapp.com/api/apply/${jobId}`, {},
+            .post(`https://jobsomely.onrender.com/api/apply/${jobId}`, {},
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {

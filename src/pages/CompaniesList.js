@@ -14,7 +14,7 @@ function CompaniesListPage() {
 
   const getAllCompanies = () => {
     axios
-      .get(`https://jobsomely.herokuapp.com/api/companies`,
+      .get(`https://jobsomely.onrender.com/api/companies`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => setCompanies(response.data))

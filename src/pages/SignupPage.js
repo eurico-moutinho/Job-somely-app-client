@@ -24,7 +24,7 @@ function SignupPage(props) {
 
     const requestBody = { email, password, username, userType };
 
-    axios.post(`https://jobsomely.herokuapp.com/api/signup`, requestBody)
+    axios.post(`https://jobsomely.onrender.com/api/signup`, requestBody)
       .then((response) => {
         console.log('JWT token', response.data.authToken);
 

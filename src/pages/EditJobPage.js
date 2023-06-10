@@ -22,7 +22,7 @@ function EditJobPage(props) {
 
     useEffect(() => {
         axios
-            .get(`https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
+            .get(`https://jobsomely.onrender.com/api/jobs/${jobId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
@@ -53,7 +53,7 @@ function EditJobPage(props) {
         // Make a PUT request to update the job
         axios
             .put(
-                `https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
+                `https://jobsomely.onrender.com/api/jobs/${jobId}`,
                 requestBody,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
@@ -68,7 +68,7 @@ function EditJobPage(props) {
         // Make a DELETE request to delete the job
         axios
             .delete(
-                `https://jobsomely.herokuapp.com/api/jobs/${jobId}`,
+                `https://jobsomely.onrender.com/api/jobs/${jobId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then(() => {

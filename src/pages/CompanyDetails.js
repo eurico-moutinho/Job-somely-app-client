@@ -14,7 +14,7 @@ function CompanyDetailsPage(props) {
 
     const getCompany = () => {
         axios
-            .get(`https://jobsomely.herokuapp.com/api/companies/${companyId}`,
+            .get(`https://jobsomely.onrender.com/api/companies/${companyId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {

@@ -17,7 +17,7 @@ function CandidateDetailsPage(props) {
     const getCandidate = () => {
         setMessage("");
         axios
-            .get(`https://jobsomely.herokuapp.com/api/candidates/${candidateId}`,
+            .get(`https://jobsomely.onrender.com/api/candidates/${candidateId}`,
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
